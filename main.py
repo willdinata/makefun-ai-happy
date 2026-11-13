@@ -395,9 +395,7 @@ def write_png(path, pixels):
 
 
 def main():
-    output_dir = os.environ.get("MAKEFUN_OUTPUT_DIR")
-    if not output_dir:
-        raise SystemExit("MAKEFUN_OUTPUT_DIR must name the output directory")
+    output_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(output_dir, exist_ok=True)
     canvas = Canvas()
     draw_scene(canvas)
